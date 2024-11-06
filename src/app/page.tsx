@@ -1,20 +1,18 @@
 "use client";
 
-import CardPlay from "@/components/atoms/CardPlay";
-import TitleBox from "@/components/atoms/TitleBox";
+import Popular from "@/components/molecules/Popular";
 
 function Home() {
-  const handleSpotifyLogin = () => {
-    window.location.href = "/api/auth/login";
-  };
+  // const handleSpotifyLogin = () => {
+  //   window.location.href = "/api/auth/login";
+  // };
 
   return (
     <div className="">
-      <button onClick={handleSpotifyLogin} className="bg-red">
+      {/* <button onClick={handleSpotifyLogin} className="bg-red">
         Login with Spotify
-      </button>
-      <TitleBox title="Popular artists" className="mt-4" />
-      <CardPlay />
+      </button> */}
+      <Popular items={[]} />
     </div>
   );
 }

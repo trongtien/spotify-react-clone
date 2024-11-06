@@ -19,14 +19,14 @@ const CardPlay: React.FC<CardProps> = ({
   return (
     <div
       className={twMerge(
-        "w-64 h-36 flex flex-col p-2 justify-center items-start gap-1 mt-4 relative cursor-pointer ",
-        "group",
+        "max-w-64 h-56 flex flex-col justify-center items-center text-start gap-1 relative cursor-pointer overflow-hidden",
+        "group hover:bg-slate-500 hover:bg-opacity-5 hover:rounded-md",
         className
       )}
     >
       <Image
         className={twMerge(
-          "mb-1  shadow-lg border-1 border-b-neutral-500",
+          "mb-1 shadow-lg border-1 border-b-neutral-500",
           isArtist ? "rounded-full" : "rounded-lg"
         )}
         src={image || ""}
@@ -34,12 +34,14 @@ const CardPlay: React.FC<CardProps> = ({
         width={isArtist ? 140 : 150}
         height={isArtist ? 140 : 150}
       />
+
       <h3 className="text-base font-medium">{title}</h3>
-      {content ? <p className="text-sm text-slate-400">${content}</p> : null}
+      
+      {content ? <p className="text-sm text-slate-400">{content}</p> : null}
 
       <p
         className={twMerge(
-          "absolute bottom-10 right-24 rounded-full p-3 bg-lime-600 text-white font-medium ",
+          "absolute bottom-10 right-8 rounded-full p-3 bg-lime-600 text-white font-medium",
           "transition-all transform translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-0"
         )}
       >
