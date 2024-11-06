@@ -19,7 +19,8 @@ const CardPlay: React.FC<CardProps> = ({
   return (
     <div
       className={twMerge(
-        "w-64 h-36 flex flex-col p-2 justify-center items-start gap-1 mt-4",
+        "w-64 h-36 flex flex-col p-2 justify-center items-start gap-1 mt-4 relative cursor-pointer ",
+        "group",
         className
       )}
     >
@@ -33,8 +34,17 @@ const CardPlay: React.FC<CardProps> = ({
         width={isArtist ? 140 : 150}
         height={isArtist ? 140 : 150}
       />
-      <h3 className="text-base font-medium">${title}</h3>
+      <h3 className="text-base font-medium">{title}</h3>
       {content ? <p className="text-sm text-slate-400">${content}</p> : null}
+
+      <p
+        className={twMerge(
+          "absolute bottom-10 right-24 rounded-full p-3 bg-lime-600 text-white font-medium ",
+          "transition-all transform translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-0"
+        )}
+      >
+        Play
+      </p>
     </div>
   );
 };
