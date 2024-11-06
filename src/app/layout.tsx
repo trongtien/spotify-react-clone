@@ -17,11 +17,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased relative bg-[#121212] p-0 m-0 flex h-screen`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased relative bg-[#121212] p-0 m-0 gap-1 flex h-screen overflow-hidden`}
       >
         <Sidebar />
 
-        <main className="w-[75%] p-2">{children}</main>
+        <main className="w-[75%] p-2 bg-neutral-900 text-white">{children}</main>
       </body>
     </html>
   );
