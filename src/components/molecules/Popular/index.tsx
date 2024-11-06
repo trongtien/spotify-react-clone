@@ -1,5 +1,6 @@
-import TitleBox from "@/components/atoms/TitleBox";
 import React, { PropsWithChildren } from "react";
+
+import TitleBox from "@/components/atoms/TitleBox";
 
 type PopularProps = PropsWithChildren & {
   title: string;

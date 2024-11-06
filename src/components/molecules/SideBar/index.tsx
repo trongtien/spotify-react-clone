@@ -2,7 +2,7 @@
 
 import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
-import { useMemo } from "react";
+import { memo, useMemo } from "react";
 import { usePathname } from "next/navigation";
 
 import type { LucideIcon } from "lucide-react";
@@ -54,4 +54,4 @@ const Sidebar = ({ children }: SideBarProps) => {
   );
 };
 
-export default Sidebar;
+export default memo(Sidebar);

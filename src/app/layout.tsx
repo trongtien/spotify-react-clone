@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 
 import { geistMono, geistSans } from "@/utils/font";
 import Sidebar from "@/components/molecules/SideBar";
+import Loading from "@/components/atoms/Loading";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "App Spotify Clone",
@@ -21,7 +23,9 @@ export default function RootLayout({
       >
         <Sidebar />
 
-        <main className="w-[75%] p-2 bg-neutral-900 text-white">{children}</main>
+        <main className="w-[75%] p-2 bg-neutral-900 text-white">
+          <Suspense fallback={<Loading />}>{children}</Suspense>
+        </main>
       </body>
     </html>
   );

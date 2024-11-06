@@ -6,6 +6,15 @@ const nextConfig: NextConfig = {
   images: {
     domains: ['i.scdn.co'],
   },
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/home', // Redirect root to /home
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
