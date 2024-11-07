@@ -11,11 +11,10 @@ const Home = async () => {
     artistService.getAll(),
     artistService.featireChart(),
     artistService.playListEditor(),
-
   ]);
 
   return (
-    <div className="w-full flex flex-col gap-10">
+    <div className="w-full h-auto flex flex-col gap-10 overflow-x-auto">
       <PopularAtist items={atristReleaseResponse?.artists?.map((el) => ({
         content: el.name,
         image: el.images?.[0]?.url ?? '',
