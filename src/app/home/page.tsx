@@ -20,20 +20,23 @@ const Home = async () => {
         content: el.name,
         image: el.images?.[0]?.url ?? '',
         title: el.name,
-        isArtist: true
+        isArtist: true,
+        link: '/playlist/37i9dQZEVXbNG2KDcFcKOF'
       })) ?? []} />
 
       <PopularFeaturedChart items={featureResponse?.artists?.map((el) => ({
         image: el.images?.[0]?.url ?? '',
         title: el.name,
-        isArtist: false
+        isArtist: false,
+        link: '/playlist/37i9dQZEVXbNG2KDcFcKOF'
       })) ?? []} />
 
       <PopularPlaylistEditor items={playlistEditorResponse?.artists?.map((el) => ({
         content: el.name,
         image: el.images?.[0]?.url ?? '',
         title: el.name,
-        isArtist: false
+        isArtist: false,
+        link: '/playlist/37i9dQZEVXbNG2KDcFcKOF'
       })) ?? []} />
     </div>
   );

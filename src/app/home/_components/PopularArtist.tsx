@@ -5,7 +5,7 @@ import Popular from "@/components/molecules/Popular"
 import React from "react"
 
 interface PopularAtistProps {
-    items: Pick<CardProps, 'content' | 'image' | 'isArtist' | 'title'>[]
+    items: Pick<CardProps, 'content' | 'image' | 'isArtist' | 'title' | 'link' >[]
 }
 
 const PopularAtist: React.FC<PopularAtistProps> = ({ items }) => {

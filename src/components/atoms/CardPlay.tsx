@@ -1,6 +1,7 @@
 'use client'
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRef } from "react";
 
 import { FaPlay } from "react-icons/fa6";
@@ -12,6 +13,7 @@ export interface CardProps {
   image?: string;
   title?: string;
   content?: string;
+  link?: string;
 }
 
 const CardPlay: React.FC<CardProps> = ({
@@ -20,12 +22,14 @@ const CardPlay: React.FC<CardProps> = ({
   title,
   content,
   image,
+  link = ''
 }) => {
 
-  const cardRef = useRef<HTMLDivElement | null>(null)
+  const cardRef = useRef<HTMLAnchorElement | null>(null)
 
   return (
-    <div
+    <Link
+      href={link}
       ref={cardRef}
       className={twMerge(
         "max-w-64 h-56 flex flex-col justify-center items-center gap-1 relative cursor-pointer overflow-hidden",
@@ -56,7 +60,7 @@ const CardPlay: React.FC<CardProps> = ({
       >
         <FaPlay />
       </p>
-    </div>
+    </Link>
   );
 };
 
