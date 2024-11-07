@@ -1,18 +1,22 @@
 import React from "react";
-import Popular from "@/components/molecules/Popular";
-import { getArtist, getTest } from "@/action/home";
+
+import PopularAtist from "./_components/PopularArtist";
+import artistService from "@/services/artist.service";
 
 
 const Home = async () => {
-  const [log, test] = await Promise.all([
-    getArtist(),
-    getTest()
+  const [atristReleaseResponse] = await Promise.all([
+    artistService.getAll(),
   ]);
 
   return (
     <div className="">
-      <Popular title="Popular Artists">{JSON.stringify(log)}</Popular>
-      <Popular title="Popular Artists">{JSON.stringify(test)}</Popular>
+      <PopularAtist items={atristReleaseResponse?.artists?.map((el) => ({
+        content: el.name,
+        image: el.images?.[0]?.url ?? '',
+        title: el.name,
+        isArtist: true
+      })) ?? []} />
     </div>
   );
 };

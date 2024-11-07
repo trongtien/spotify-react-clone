@@ -34,7 +34,7 @@ const Sidebar = ({ children }: SideBarProps) => {
   }, [pathname]);
 
   return (
-    <nav className="w-[25%] p-2">
+    <nav className="w-[20%] p-2">
       <Box>
         <div className="flex flex-col gap-y-4 px-5 py-4">
           {routes.map((item) => (

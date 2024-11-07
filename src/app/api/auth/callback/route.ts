@@ -30,14 +30,6 @@ export async function GET(req: any) {
     });
 
     const { access_token, refresh_token } = response.data;
-    // console.log("refresh_token", refresh_token);
-    // if (access_token) {
-    //   localStorage.setItem(COMMON_KEY.SPOTIFY_TOKEN, access_token);
-    // }
-
-    // if (refresh_token) {
-    //   localStorage.setItem(COMMON_KEY.SPOTIFY_REFRESH_TOKEN, refresh_token);
-    // }
 
     // Store the access token in a cookie (or use your preferred method for storing tokens)
     const headers = new Headers();
