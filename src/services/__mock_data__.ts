@@ -1,3 +1,4 @@
+import { BrowseAllItem } from "@/types/browseSeach"
 
 
 
@@ -393,3 +394,31 @@ export const playListEditors = {
         }
     ]
 }
+
+
+export const browseAll: BrowseAllItem[] = [
+    {
+        title: "Music",
+        image: 'https://i.scdn.co/image/ab67fb8200005caf474a477debc822a3a45c5acb',
+        link: '/gener/0JQ5DAqbMKFSi39LMRT0Cy',
+        color: '#dc148c'
+    },
+    {
+        title: "Podcasts",
+        image: 'https://i.scdn.co/image/ab6765630000ba8a81f07e1ead0317ee3c285bfa',
+        link: '/gener/0JQ5DArNBzkmxXHCqFLx2J',
+        color: '#006450'
+    },
+    {
+        title: "Live Event",
+        image: 'https://concerts.spotifycdn.com/images/live-events_category-image.jpg',
+        link: '/concert',
+        color: '#8400e7'
+    },
+    {
+        title: "Made For You",
+        image: 'https://t.scdn.co/images/ea364e99656e46a096ea1df50f581efe',
+        link: '/gener/0JQ5DAqbMKFSi39LMRT0Cys',
+        color: '#1e3264'
+    }
+]

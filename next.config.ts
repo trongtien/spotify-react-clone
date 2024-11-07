@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactStrictMode: true,
   images: {
-    domains: ['i.scdn.co', 'charts-images.scdn.co'],
+    domains: ['i.scdn.co', 'charts-images.scdn.co', 'concerts.spotifycdn.com','t.scdn.co'],
   },
   async redirects() {
     return [
