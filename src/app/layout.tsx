@@ -24,7 +24,7 @@ export default async function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased relative bg-[#121212] p-0 m-0 gap-1 flex h-screen overflow-hidden`}
       >
         <Sidebar />
-        <main className="w-[80%] p-4 bg-neutral-900 text-white">
+        <main className="w-[80%] p-4 bg-neutral-900 text-white overflow-y-auto">
           <Suspense fallback={<Loading />}>{children}</Suspense>
         </main>
       </body>
