@@ -1,4 +1,7 @@
+'use client'
+
 import Image from "next/image";
+import { useRef } from "react";
 
 import { FaPlay } from "react-icons/fa6";
 import { twMerge } from "tailwind-merge";
@@ -18,28 +21,32 @@ const CardPlay: React.FC<CardProps> = ({
   content,
   image,
 }) => {
+
+  const cardRef = useRef<HTMLDivElement | null>(null)
+
   return (
     <div
+      ref={cardRef}
       className={twMerge(
-        "max-w-72 h-56 flex flex-col justify-center text-start gap-1 relative cursor-pointer overflow-hidden",
+        "max-w-64 h-56 flex flex-col justify-center items-center gap-1 relative cursor-pointer overflow-hidden",
         "group hover:bg-slate-500 hover:bg-opacity-5 hover:rounded-md",
         className
       )}
     >
       <Image
         className={twMerge(
-          "mb-1 shadow-lg border-1 border-b-neutral-500",
+          "mb-1 shadow-lg border-1 border-b-neutral-500 bg-cover",
           isArtist ? "rounded-full" : "rounded-lg"
         )}
         src={image || ""}
         alt="img"
-        width={isArtist ? 130 : 150}
+        width={isArtist ? 130 : 256}
         height={isArtist ? 130 : 150}
       />
 
-      <h3 className="text-base font-medium">{title}</h3>
-      
-      {content ? <p className="text-sm text-slate-400">{content}</p> : null}
+      <h3 className="text-base font-medium w-full text-start">{title}</h3>
+
+      {content ? <p className="text-sm text-slate-400  w-full text-start">{content}</p> : null}
 
       <p
         className={twMerge(
