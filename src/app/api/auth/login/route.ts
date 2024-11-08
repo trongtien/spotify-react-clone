@@ -11,4 +11,4 @@ export async function GET() {
       Location: authUrl, // Redirect the user to Spotify's login page
     },
   });
-}
+} 

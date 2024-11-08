@@ -1,4 +1,7 @@
+'use server'
+
 import React from "react";
+import { cookies } from 'next/headers';
 
 import artistService from "@/services/artist.service";
 import PopularAtist from "./_components/PopularArtist";
@@ -7,6 +10,9 @@ import PopularPlaylistEditor from "./_components/PopularPlaylistEditor";
 
 
 const Home = async () => {
+  const cookieStore = cookies();
+
+  console.log("accessToken=============",(await cookieStore).get('access_token'))
   const [atristReleaseResponse, featureResponse, playlistEditorResponse] = await Promise.all([
     artistService.getAll(),
     artistService.featireChart(),

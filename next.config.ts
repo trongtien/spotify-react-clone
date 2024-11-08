@@ -6,6 +6,12 @@ const nextConfig: NextConfig = {
   images: {
     domains: ['i.scdn.co', 'charts-images.scdn.co', 'concerts.spotifycdn.com','t.scdn.co'],
   },
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.devtool = 'source-map'; // Enable source maps for client-side code
+    }
+    return config;
+  },
   async redirects() {
     return [
       {
